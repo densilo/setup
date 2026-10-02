@@ -1,0 +1,51 @@
+name: 'Densilo'
+description: 'Claude pull request reviews that finish, at about half the cost: one step before claude-code-action'
+author: 'Densilo'
+branding:
+  icon: 'minimize-2'
+  color: 'orange'
+
+inputs:
+  densilo-key:
+    description: 'A service account key: densilo.com/app -> your organization -> Organization -> Service accounts. Store it as the secret DENSILO_KEY.'
+    required: true
+  agent:
+    description: 'Which agent step follows: claude, codex or both.'
+    required: false
+    default: 'claude'
+  mode:
+    description: 'proxy: Claude Code and Codex run through Densilo (path_to_claude_code_executable / responses-api-endpoint). mcp: Densilo''s review tools are added to Claude Code (no change to your Claude step). both.'
+    required: false
+    default: 'mcp'
+  claude-code-version:
+    description: 'Claude Code version to install for the wrapped executable (claude-code-action skips its own install when given one).'
+    required: false
+    default: 'latest'
+  manifest-url:
+    description: 'Densilo release manifest (testing a staged release). Leave empty for the current release.'
+    required: false
+    default: ''
+  densilo-path:
+    description: 'Testing: use this densilo command instead of installing one.'
+    required: false
+    default: ''
+  fail-on-error:
+    description: 'Fail the job when Densilo cannot be set up. Default: warn and let the agent run direct.'
+    required: false
+    default: 'false'
+
+outputs:
+  enabled:
+    description: '"true" when the agent steps will run through Densilo.'
+  claude-executable:
+    description: 'For claude-code-action: path_to_claude_code_executable. Empty when Densilo is unavailable (the action then installs its own).'
+  codex-responses-endpoint:
+    description: 'For openai/codex-action: responses-api-endpoint. Empty when Densilo is unavailable (the default endpoint).'
+  codex-args:
+    description: 'For openai/codex-action: codex-args that register Densilo''s recovery tool. Empty when not needed.'
+
+runs:
+  using: 'node24'
+  main: 'main.js'
+  post: 'post.js'
+  post-if: 'always()'
