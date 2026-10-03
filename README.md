@@ -41,9 +41,9 @@ runs exactly as it would without it. It never fails your job unless you set
 ## Measured
 
 On real pull requests (Sonnet 5, the standard review prompt, a 15-turn
-limit): 11 of 12 reviews finished vs 5 of 12 without Densilo, planted bugs
-caught 5 of 6 vs 2 of 6, and cost per finished review $0.37 vs $0.73. Your own
-numbers are in every job summary.
+limit), with Densilo against without: twice as many reviews finished,
+2.5 times as many planted bugs were caught, and each finished review cost
+about half as much. Your own numbers are in every job summary.
 
 ## Inputs
 
