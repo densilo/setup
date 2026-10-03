@@ -1,5 +1,5 @@
 name: 'Densilo'
-description: 'Claude pull request reviews that finish, at about half the cost: one step before claude-code-action'
+description: 'Cut your Claude PR review cost in half and get twice as many reviews finished: one step before claude-code-action'
 author: 'Densilo'
 branding:
   icon: 'minimize-2'

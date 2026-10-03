@@ -1,9 +1,9 @@
 # Densilo for GitHub Actions
 
-**Claude reviews every pull request — at half the cost.**
+**Cut your Claude PR review cost in half, and get twice as many reviews finished.**
 
-Add one step before your Claude action. Reviews finish instead of running out
-of turns, and each finished review costs about half as much.
+Add Densilo to the Claude review action you already run: one step before it.
+Your workflow and your Anthropic account stay exactly as they are.
 
 ```yaml
       - uses: densilo/setup@v1
