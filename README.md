@@ -40,9 +40,9 @@ runs exactly as it would without it. It never fails your job unless you set
 
 ## Measured
 
-A small test so far: 12 real pull requests from our own repository, half of
-them with a planted bug (Sonnet 5, the standard review prompt, a 15-turn
-limit), with Densilo against without. Twice as many reviews finished,
+A small test so far: 6 changes from our own repository, 3 of them with a
+planted bug, each reviewed twice with Densilo and twice without (Sonnet 5,
+the standard review prompt, a 15-turn limit). Twice as many reviews finished,
 2.5 times as many planted bugs were caught, and each finished review cost
 about half as much. Your own numbers are in every job summary.
 
